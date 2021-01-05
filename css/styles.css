@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+/* 
+Moderate violet: hsl(263, 55%, 52%)
+Very dark grayish blue: hsl(217, 19%, 35%)
+Very dark blackish blue: hsl(219, 29%, 14%)
+White: hsl(0, 0%, 100%)
+
+### Neutral
+
+Light gray: hsl(0, 0%, 81%)
+Light grayish blue: hsl(210, 46%, 95%)
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    background-color: hsl(210, 46%, 95%);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 375px;
+    margin: auto;
+}
+
+.c1 {
+    background-color: hsl(263, 55%, 52%);
+    color: white;
+}
+.c2 {
+    background-color: hsl(217, 19%, 35%);
+    color: white;
+}
+.c3, .c5 {
+    background-color: white;
+    color: hsl(217, 19%, 35%);
+}
+.c4 {
+    background-color: hsl(219, 29%, 14%);
+    color: white;
+}
+
+.card-title-title {
+    opacity: 0.5;
+}
+
+.card p {
+    opacity: 0.7;
+    margin-top: 1rem;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 1rem 0;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-title img {
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    border: 2px solid transparent;
+    margin-right: 1rem;
+}
+
+.c1 .card-title img {
+    border: 2px solid hsl(263, 72%, 69%)
+}
+
+.c4 .card-title img {
+    border: 2px solid hsl(263, 55%, 52%);
+}
+
+.c1 {
+    background-image: url('../images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position-y: top;
+    background-position-x: 90%;
+}
+
+@media (min-width:1500px) {
+    .container {
+        max-width: 1440px;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    .card {
+        margin: 0;
+    }
+    .c1 {
+        grid-area: c1;
+        background-position-x: 80%;
+    }
+    .c2 {
+        grid-area: c2;
+    }
+    .c3 {
+        grid-area: c3;
+    }
+    .c4 {
+        grid-area: c4;
+    }
+    .c5 {
+        grid-area: c5;
+        max-width: 65%;
+    }
+    .grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-areas:
+        'c1 c1 c2 c5'
+        'c3 c4 c4 c5';
+
+    }
+
+}
